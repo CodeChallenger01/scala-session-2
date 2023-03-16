@@ -19,10 +19,10 @@ object ElementsSquare extends App {
   //Method to check the exception
   def checkException(list: List[Int]) = {
     try {
-      if (list.isEmpty) throw new ArithmeticException()
+      if (list.isEmpty) throw new NullPointerException()
     }
     catch {
-      case ex: ArithmeticException => ex.getMessage
+      case ex: NullPointerException => ex.getMessage
     }
   }
 }
