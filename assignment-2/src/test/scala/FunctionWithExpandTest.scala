@@ -1,38 +1,42 @@
 import org.scalatest._
 import org.scalatest.flatspec.AnyFlatSpec
-import org.scalatest.matchers.should.Matchers
 
-class AddFunctionTest extends AnyFlatSpec with Matchers {
+class AddFunctionTest extends AnyFlatSpec {
 
-  val addFunction: (Int, Int) => Int = (num1: Int, num2: Int) => num1 + num2
-  val sumOfList: List[Int] => Int = (list: List[Int]) => list.sum
-  val higherOrderFunction: (Int => Int, Int) => Int = (fu: (Int => Int), num: Int) => fu(num)
-
-  "addFunction" should "return correct sum when passed positive integers" in {
-    val result = addFunction(2, 3)
-    result shouldEqual 5
+  val check = new FunctionWithExpand
+  //1.1--> Expanded Function of adding two number give TRUE
+  "it" should "match with value with Expanded function of add" in{
+    val result = check.addExpandedFunction(2,3)
+    assert(result==5)
   }
 
-  it should "return correct " in {
-    val result = addFunction(-2, -3)
-    result shouldEqual -5
+  //1.2--> Expanded Function of adding two number give FALSE
+  "it" should "not match with value with Expanded function of add" in {
+    val result = check.addExpandedFunction(10, 3)
+    assert(result != 5)
   }
 
-  it should "return correct sum when passed a list of number" in {
-    val result = sumOfList(List(1,2,3,4))
-    result shouldEqual 10
-  }
-  it should "return correct sum " in {
-    val result = sumOfList(List(11, 20, 3, 4))
-    result shouldEqual 38
+  //2.1--> Expanded Function of Adding list of element give TRUE
+  "it" should "match with value with Expanded function of sum of list" in {
+    val result = check.sumOfList1(List(1,2,3,4))
+    assert(result == 10)
   }
 
-  it should "return true when passed parameter as a function and integer" in {
-    val result = higherOrderFunction((x:Int)=>x+1,9)
-    result shouldEqual 10
+  //2.2--> Expanded Function of Adding list of element give FALSE
+  "it" should "not match with value with Expanded function of sum of list" in {
+    val result = check.sumOfList1(List(1, 2, 3, 4))
+    assert(result != 30)
   }
-  it should "return true" in {
-    val result = higherOrderFunction((x: Int) => x + 10, 9)
-    result shouldEqual 19
+
+  // 3.1-->Expanded Function of Adding list of element give TRUE
+  "it" should "match with value with Expanded function of higher order Function" in {
+    val result = check.higherOrderFun((num:Int)=>num+1, 8)
+    assert(result == 9)
+  }
+
+  // 3.1-->Expanded Function of Adding list of element give FALSE
+  "it" should "not match with value with Expanded function of higher order Function" in {
+    val result = check.higherOrderFun((num: Int) => num + 1, 8)
+    assert(result != 19)
   }
 }
