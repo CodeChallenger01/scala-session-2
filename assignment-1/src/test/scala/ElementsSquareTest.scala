@@ -5,7 +5,7 @@ class ElementsSquareTest extends AnyFlatSpec{
   val list: List[Int] = List(1, 2, 3, 4)
 
   // 1. Checking with pattern matching part in ElementsSquare.scala class
-  // 1.1-->It should give true
+  // 1.1-->It should givcde true
   "it" should "match with value squared by match" in {
     val result: List[Int] = checkSquaredList.squareListByPattern(list)
     assert(result == List(1, 4, 9, 16))
