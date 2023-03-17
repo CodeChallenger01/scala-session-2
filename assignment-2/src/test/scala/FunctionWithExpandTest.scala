@@ -13,7 +13,7 @@ class AddFunctionTest extends AnyFlatSpec with Matchers {
     result shouldEqual 5
   }
 
-  it should "return incorrect " in {
+  it should "return correct " in {
     val result = addFunction(-2, -3)
     result shouldEqual -5
   }
