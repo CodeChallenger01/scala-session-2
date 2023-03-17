@@ -17,20 +17,20 @@
 
 ## Assignment-2
 ### Steps 
-**Step 1:** In Intellij move to **assignment-2/src/main/scala** and create a **FunctionWithExpand.scala**.       
-**Step 2:** Create object and extend the App and create a class and inside it create method addFunction with Expanded Form, sumOfList with Expanded form, higherOrderFunction with Expanded Form. 
-EXAMPLE:
-1. val addFunction: (Int, Int) => Int = (num1: Int, num2: Int) => num1 + num2
-  //Expanded function of adding two number
-2. val addExpandedFunction: Function2[Int, Int, Int] = new Function2[Int, Int, Int] {
+**Step 1:** In Intellij move to **assignment-2/src/main/scala** and create a **FunctionWithExpand.scala**.          
+**Step 2:** Create object and extend the App and create a class and inside it create method addFunction, sumOfList, higherOrderFunction with Expanded Form of all.    
+**EXAMPLE:**     
+**1.** val addFunction: (Int, Int) => Int = (num1: Int, num2: Int) => num1 + num2
+    **//Expanded function of adding two number**      
+**2.** val addExpandedFunction: Function2[Int, Int, Int] = new Function2[Int, Int, Int] {
     def apply(num1: Int, num2: Int): Int = num2 + num1
-  } 
-Step 3: Similarly perform for all the methods.
-**Step 6:** After that add the **scalatest dependencies** in build.sbt file.       
-**Step 7:** Create a **Test Class in src/test/scala.** Inside the test class extend the **AnyFlatSpec** Class and import the scalatest package in that test class.     
-**Step 8:** Inside the test class create instance of object and declare and initialize list.        
-**Step 9:** After that call the **all method and in assert compare the actual value with output**  with both == or != and perform same. 
-**Step 10:** In terminal run the command **sbt test it show the result that test case** is passed or fail.      
+  }      
+**Step 3:** Similarly perform for all the methods.      
+**Step 4:** After that add the **scalatest dependencies** in build.sbt file.          
+**Step 5:** Create a **Test Class in src/test/scala.** Inside the test class extend the **AnyFlatSpec** Class and import the scalatest package in that test class.         
+**Step 6:** Inside the test class create instance of object and declare and initialize list.           
+**Step 7:** After that call the **all method and in assert compare the actual value with output**  with both == or != and perform same.     
+**Step 8:** In terminal run the command **sbt test it show the result that test case** is passed or fail.          
 **OUTPUT**
 
 ![Screenshot from 2023-03-17 11-34-01](https://user-images.githubusercontent.com/124979629/225825451-eaf7929e-5b24-4b04-a640-0be84cb3edb7.png)
